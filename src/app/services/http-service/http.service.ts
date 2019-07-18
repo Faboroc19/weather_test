@@ -30,7 +30,7 @@ export class HttpService  {
 
     headers = new HttpHeaders()
         .set('Content-Type',  'application/json')
-        .set('Access-Control-Allow-Origin', 'localhost:4200')
+        .set('Access-Control-Allow-Origin', '*')
         .set('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT')
         .set('Access-Control-Allow-Headers', 'x-requested-with')
         .set('Access-Control-Allow-Credentials', 'true');
