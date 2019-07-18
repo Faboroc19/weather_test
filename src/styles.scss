@@ -1,1 +1,25 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background: url(./assets/img/weather.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.cities .city {
+    width: 100%;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.col-sm {
+    margin: 10px 0;
+    min-width: 200px;
+}

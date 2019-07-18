@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row" *ngIf="cities.length>0">
+        <div class="col-sm " *ngFor="let item of cities">
+            <div class="card cities">
+                <!-- <img src="..." class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                    <h3 class="card-title">{{ item.city.name }}</h3>
+                    <img [src]="'http://openweathermap.org/img/wn/' + item.list[0].weather[0].icon + '@2x.png'" [alt]="item.list[0].weather[0].description">
+                    <h5 class="card-text">Temperatura Promedio:</h5>
+                    <p class="card-text">{{ item.list[0].main.temp | celsius }} °C</p>
+                    <h5 class="card-text">Fuerza del viento:</h5>
+                    <p class="card-text">{{ item.list[0].wind.speed }}</p>
+                    <div (click)="viewMore(item)" class="btn btn-primary">Próximas horas</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<h1>{{ cityName }}</h1>
+<h4>Pronostico proximas horas:</h4>
+<div class="row" *ngIf="city.length>0">
+    <div class="col-sm" *ngFor="let item of city; let i = index">
+        <div class="card city" *ngIf="i<maxItems">
+            <!-- <img src="..." class="card-img-top" alt="..."> -->
+            <div class="card-body">
+                <img [src]="'http://openweathermap.org/img/wn/' + item.weather[0].icon + '@2x.png'" [alt]="item.weather[0].description">
+                <p class="card-text"><strong>Hora:</strong> {{ item.dt_txt | slice:11:16 }}</p>
+                <p class="card-text"><strong>Temp. Promedio:</strong></p>
+                <p class="card-text-sub">{{ item.main.temp | celsius }} °C</p>
+                <p class="card-text"><strong>Temp. max:</strong></p>
+                <p class="card-text-sub">{{ item.main.temp_max | celsius }} °C</p>
+                <p class="card-text"><strong>Temp. min:</strong></p>
+                <p class="card-text-sub">{{ item.main.temp_min | celsius }} °C</p>
+                <p class="card-text"><strong>Fuerza del viento:</strong></p>
+                <p class="card-text-sub">{{ item.wind.speed }}</p>
+            </div>
+        </div>
+    </div>
+</div>
